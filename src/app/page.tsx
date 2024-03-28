@@ -49,7 +49,7 @@ export default function Home() {
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>next js </p>
+          <p>next </p>
         </a>
 
         <a
