@@ -49,7 +49,7 @@ export default function Home() {
           <h2>
             Docs <span>-&gt;</span>
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
+          <p>next js 132124214214</p>
         </a>
 
         <a
