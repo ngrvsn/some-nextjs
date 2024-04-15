@@ -1,0 +1,1 @@
+export const getNormalizedPrice = (price: number | string): string => `${Number(price).toLocaleString('ru-RU')} ₽`

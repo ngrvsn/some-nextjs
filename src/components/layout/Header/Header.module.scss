@@ -1,0 +1,19 @@
+.container {
+  padding-top: 40px;
+}
+
+.header {
+  padding: 18px 23px;
+  background-color: var(--block-bg-color);
+  border-radius: 15px;
+  box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.actionsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
