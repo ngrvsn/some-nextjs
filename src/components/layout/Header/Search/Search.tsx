@@ -20,6 +20,9 @@ export const Search: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = React.useState(false)
 
+  const [isLoadingProducts, setIsLoadingProducts] = React.useState(false)
+  const [hasMoreProducts, setHasMoreProducts] = React.useState(true)
+
   const [subCategories, setSubCategories] = React.useState<ISubCategory[]>([])
   const [products, setProducts] = React.useState<IProduct[]>([])
 
@@ -35,24 +38,45 @@ export const Search: React.FC = () => {
 
   const getSearchData = async (searchValue: string) => {
     try {
+      setHasMoreProducts(true)
       const responseData = await productApi.getProducts({
         skip: '0',
-        limit: '18',
+        limit: '24',
         name: searchValue
       })
       modalRef?.current?.scrollTo({ top: 0 })
       setSubCategories(responseData.subCategories)
       setProducts(responseData.products)
-    } catch (error) {
+    } catch (e) {
       toast.error('Ошибка при получении данных')
     }
   }
 
+  const getProductsByScroll = async () => {
+    if (isLoadingProducts || !hasMoreProducts) return
+    setIsLoadingProducts(true)
+
+    try {
+      const responseData = await productApi.getProducts({
+        skip: products.length.toString(),
+        limit: '24',
+        name: searchValue
+      })
+      setProducts((prev) => [...prev, ...responseData.products])
+      setHasMoreProducts(responseData.products.length > 0)
+    } catch (e) {
+      toast.error('Ошибка при получении товаров')
+    } finally {
+      setIsLoadingProducts(false)
+    }
+  }
+
   const handleScroll = (e: any) => {
-    const scrollHeight = e.target.scrollHeight
-    const currentHeight = e.target.scrollTop + e.target.clientHeight
-    if (currentHeight + 1 >= scrollHeight) {
-      console.log(1)
+    const { scrollTop, clientHeight, scrollHeight } = e.target
+    const threshold = scrollHeight - clientHeight * (1 + 0.3) 
+
+    if (scrollTop >= threshold) {
+      getProductsByScroll()
     }
   }
 
@@ -92,46 +116,52 @@ export const Search: React.FC = () => {
         style={{ display: isModalOpen ? 'block' : 'none' }}
         onScroll={handleScroll}
       >
-        <ul>
-          {subCategories.map((item) => (
-            <li key={item._id}>
-              <Link href='/' className={styles.subCategory}>
-                <div>
-                  <strong className={styles.subCategoryName}>
-                    {item.name}
-                  </strong>
-                  <p className={styles.subCategoryCatName}>
-                    {item.category_id.name}
-                  </p>
-                </div>
-                <Image
-                  src={goToIcon}
-                  className={styles.subCategoryIcon}
-                  alt=''
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ul className={styles.productsList}>
-          {products.map((item) => (
-            <li key={item._id} className={styles.product}>
-              <Link href='/'>
-                <div className={styles.productPhotoWrapper}>
+        {!!subCategories.length && (
+          <ul>
+            {subCategories.map((item) => (
+              <li key={item._id}>
+                <Link href='/' className={styles.subCategory}>
+                  <div>
+                    <strong className={styles.subCategoryName}>
+                      {item.name}
+                    </strong>
+                    <p className={styles.subCategoryCatName}>
+                      {item.category_id.name}
+                    </p>
+                  </div>
                   <Image
-                    src={`${IMAGES_URL}${item.photo[0]}`}
-                    alt={`${item.name}`}
-                    fill
-                    sizes='25vw'
-                    style={{ objectFit: 'cover' }}
+                    src={goToIcon}
+                    className={styles.subCategoryIcon}
+                    alt=''
                   />
-                </div>
-                <strong className={styles.productPrice}>{getNormalizedPrice(item.price)}</strong>
-                <p className={styles.productName}>{item.name}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+        {!!products.length && (
+          <ul className={styles.productsList}>
+            {products.map((item, index) => (
+              <li key={`${item._id}?${index}`} className={styles.product}>
+                <Link href='/'>
+                  <div className={styles.productPhotoWrapper}>
+                    <Image
+                      src={`${IMAGES_URL}${item.photo[0]}`}
+                      alt={`${item.name}`}
+                      fill
+                      sizes='25vw'
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <strong className={styles.productPrice}>
+                    {getNormalizedPrice(item.price)}
+                  </strong>
+                  <p className={styles.productName}>{item.name}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </aside>
     </figure>
   )

@@ -39,7 +39,9 @@ export const Categories: React.FC = () => {
     setActiveCategoryId(categoryId)
     if (subCategories?.[categoryId] || !categoryId) return
     try {
-      const responseData = await productApi.getSubCategories(categoryId)
+      const responseData = await productApi.getSubCategoriesByCategory(
+        categoryId
+      )
       setSubCategories((prev) => ({
         ...prev,
         [categoryId]: responseData.subCategories
@@ -65,18 +67,22 @@ export const Categories: React.FC = () => {
         className={styles.button}
         onClick={() => setIsModalOpen((prev) => !prev)}
       >
-        <Image src={isModalOpen ? categoryCloseIcon : categoryOpenIcon} alt='' className={styles.buttonIcon} />
+        <Image
+          src={isModalOpen ? categoryCloseIcon : categoryOpenIcon}
+          alt=''
+          className={styles.buttonIcon}
+        />
         <span className={styles.buttonText}>Категории</span>
       </button>
       <aside
         className={styles.modal}
         style={{ display: isModalOpen ? 'flex' : 'none' }}
       >
-        <ul className={styles.categoriesList}>
-          {categories.map((item) => (
-            <li key={item._id}>
-              <Link
-                href='/'
+        {!!categories.length && (
+          <ul className={styles.categoriesList}>
+            {categories.map((item) => (
+              <li
+                key={item._id}
                 className={styles.categoryItem}
                 style={{
                   backgroundColor:
@@ -94,57 +100,71 @@ export const Categories: React.FC = () => {
                   />
                 </div>
                 <p className={styles.categoryItemName}>{item.name}</p>
-                <Image
-                  src={goToIcon}
-                  alt=''
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ul className={styles.subCategoryList}>
-          {activeSubCategories.map((subCategories, index) => (
-            <div key={index} className={styles.subCategoriesRow}>
-              {subCategories.map((item) => (
-                <li key={item._id} className={styles.subCategory}>
-                  <Link href='/' className={styles.subCategoryText}>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </div>
-          ))}
-        </ul>
-        <ul className={styles.mobileCategoryList}>
-          {categories.map((item) => (
-            <div key={item._id}>
-              <li className={styles.mobileCategoryItem} onClick={() => onCategorySelect(activeCategoryId === item._id ? '' : item._id)}>
-                <div className={styles.categoryItemImageWrapper}>
-                  <Image
-                    src={`${IMAGES_URL}${item.photo}`}
-                    alt={`Изображение категории ${item.name}`}
-                    width={46}
-                    height={46}
-                    className={styles.categoryItemImage}
-                  />
-                </div>
-                <p className={styles.categoryItemName}>{item.name}</p>
-                <Image
-                  src={goToIcon}
-                  alt=''
-                  style={{ rotate: activeCategoryId === item._id ? '-90deg' : '90deg' }}
-                />
+                <Image src={goToIcon} alt='' />
               </li>
-              <Collapse isOpened={activeCategoryId === item._id}>
-                {subCategories?.[item._id]?.map(item => (
-                  <Link key={item._id} href='/' className={styles.mobileSubCategoryItem}>
-                    {item.name}
-                  </Link>
+            ))}
+          </ul>
+        )}
+        {!!activeSubCategories.length && (
+          <ul className={styles.subCategoryList}>
+            {activeSubCategories.map((subCategories, index) => (
+              <div key={index} className={styles.subCategoriesRow}>
+                {subCategories.map((item) => (
+                  <li key={item._id} className={styles.subCategory}>
+                    <Link href='/' className={styles.subCategoryText}>
+                      {item.name}
+                    </Link>
+                  </li>
                 ))}
-              </Collapse>
-            </div>
-          ))}
-        </ul>
+              </div>
+            ))}
+          </ul>
+        )}
+        {!!categories.length && (
+          <ul className={styles.mobileCategoryList}>
+            {categories.map((item) => (
+              <div key={item._id}>
+                <li
+                  className={styles.mobileCategoryItem}
+                  onClick={() =>
+                    onCategorySelect(
+                      activeCategoryId === item._id ? '' : item._id
+                    )
+                  }
+                >
+                  <div className={styles.categoryItemImageWrapper}>
+                    <Image
+                      src={`${IMAGES_URL}${item.photo}`}
+                      alt={`Изображение категории ${item.name}`}
+                      width={46}
+                      height={46}
+                      className={styles.categoryItemImage}
+                    />
+                  </div>
+                  <p className={styles.categoryItemName}>{item.name}</p>
+                  <Image
+                    src={goToIcon}
+                    alt=''
+                    style={{
+                      rotate: activeCategoryId === item._id ? '-90deg' : '90deg'
+                    }}
+                  />
+                </li>
+                <Collapse isOpened={activeCategoryId === item._id}>
+                  {subCategories?.[item._id]?.map((item) => (
+                    <Link
+                      key={item._id}
+                      href='/'
+                      className={styles.mobileSubCategoryItem}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </Collapse>
+              </div>
+            ))}
+          </ul>
+        )}
       </aside>
     </figure>
   )

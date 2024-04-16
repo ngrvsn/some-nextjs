@@ -2,29 +2,40 @@ import {
   ICategory,
   IProductQueryRequest,
   IProductQueryResponse,
+  ISubCategory,
   ISubCategoryResponse
 } from '@/models/product'
 import { API_URL } from '@/shared/constants/urls'
+import { myError } from '@/shared/utils/myError'
 
 export const productApi = {
   async getCategories(): Promise<ICategory[]> {
     try {
       const response = await fetch(`${API_URL}category`)
       if (!response.ok) {
-        const errorText = await response.text()
-        throw new Error(`${response.status}?${errorText}`)
+        myError.stringify(response)
       }
       return await response.json()
     } catch (e) {
       throw e
     }
   },
-  async getSubCategories(categoryId: string): Promise<ISubCategoryResponse> {
+  async getSubCategoriesByCategory(categoryId: string): Promise<ISubCategoryResponse> {
     try {
       const response = await fetch(`${API_URL}subCategory/${categoryId}`)
       if (!response.ok) {
-        const errorText = await response.text()
-        throw new Error(`${response.status}?${errorText}`)
+        myError.stringify(response)
+      }
+      return await response.json()
+    } catch (e) {
+      throw e
+    }
+  },
+  async getSubCategories(): Promise<ISubCategory[]> {
+    try {
+      const response = await fetch(`${API_URL}subCategory`)
+      if (!response.ok) {
+        myError.stringify(response)
       }
       return await response.json()
     } catch (e) {
@@ -45,8 +56,7 @@ export const productApi = {
         }&seller_id=${seller_id ?? ''}&subCategory_id=${subCategory_id ?? ''}`
       )
       if (!response.ok) {
-        const errorText = await response.text()
-        throw new Error(`${response.status}?${errorText}`)
+        myError.stringify(response)
       }
       return await response.json()
     } catch (e) {

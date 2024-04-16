@@ -26,7 +26,7 @@
 .modal {
   width: 100%;
   position: absolute;
-  top: 105px;
+  top: 133px;
   left: 0;
   padding: 26px 26px 18px 26px;
   background-color: #FFFFFF;
@@ -38,12 +38,24 @@
   @media screen and (max-width: 1080px) {
     gap: 30px;
   }
+
+  @media screen and (max-width: 903px) {
+    top: 163px;
+  }
   
   @media screen and (max-width: 743px) {
-    top: 170px;
+    top: 225px;
   }
 
-  @media screen and (max-width: 417px) {
+  @media screen and (max-width: 618px) {
+    top: 255px;
+  }
+
+  @media screen and (max-width: 550px) {
+    top: 166px;
+  }
+
+  @media screen and (max-width: 418px) {
     top: 230px;
   }
 }

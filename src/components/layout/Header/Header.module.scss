@@ -16,4 +16,39 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 550px) {
+    margin-bottom: 0;
+  }
+}
+
+.secondaryData {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}
+
+.subCategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  flex-grow: 1;
+}
+
+.subCategoryItem {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.linkToSellerService {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--main-color);
+  flex-shrink: 0;
 }
