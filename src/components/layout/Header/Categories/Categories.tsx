@@ -93,7 +93,7 @@ export const Categories: React.FC = () => {
                 <div className={styles.categoryItemImageWrapper}>
                   <Image
                     src={`${IMAGES_URL}${item.photo}`}
-                    alt={`Изображение категории ${item.name}`}
+                    alt={item.name}
                     width={46}
                     height={46}
                     className={styles.categoryItemImage}
@@ -135,7 +135,7 @@ export const Categories: React.FC = () => {
                   <div className={styles.categoryItemImageWrapper}>
                     <Image
                       src={`${IMAGES_URL}${item.photo}`}
-                      alt={`Изображение категории ${item.name}`}
+                      alt={item.name}
                       width={46}
                       height={46}
                       className={styles.categoryItemImage}

@@ -9,7 +9,7 @@
   flex-grow: 1;
   position: relative;
   overflow: hidden;
-  z-index: 100;
+  z-index: 4;
 }
 
 .searchInput {
@@ -59,6 +59,10 @@
   border-radius: 7px;
   background: linear-gradient(180deg, #FF9433 0%, #FF7905 100%);
 
+  &:hover {
+    background: var(--main-color);
+  }
+
   @media screen and (max-width: 360px) {
     display: none;
   }
@@ -73,6 +77,7 @@
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
+  z-index: 3;
 
   @media screen and (max-width: 800px) {
     max-height: 75vh;
@@ -99,7 +104,7 @@
 .subCategoryName {
   font-size: 14px;
   font-weight: 500;
-  color: #111111;
+  color: var(--secondary-text-color);
   display: block;
   margin-bottom: 6px;
 }
@@ -107,7 +112,7 @@
 .subCategoryCatName {
   font-size: 12px;
   font-weight: 500;
-  color: #111111;
+  color: var(--secondary-text-color);
   opacity: 0.46;
 }
 
@@ -125,8 +130,7 @@
 .product {
   width: calc(100% / 4 - 15px);
   position: relative;
-  margin: 0 7.5px;
-  margin-bottom: 15px;
+  margin: 0 7.5px 15px;
 
   @media screen and (max-width: 1120px) {
     width: calc(100% / 3 - 15px);
@@ -161,7 +165,7 @@
 
 .productPrice {
   display: block;
-  color: #111111;
+  color: var(--secondary-text-color);
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;

@@ -21,7 +21,7 @@ export const Header: React.FC = async () => {
       <header className={styles.header}>
         <div className={styles.actionsWrapper}>
           <Link href='/'>
-            <Image src={logoIcon} alt='Логотип маркетплейса HorseSmart' priority />
+            <Image src={logoIcon} alt='Логотип компании HorseSmart' priority />
           </Link>
           <Categories />
           <Search />

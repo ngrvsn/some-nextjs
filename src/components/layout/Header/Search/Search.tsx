@@ -73,7 +73,7 @@ export const Search: React.FC = () => {
 
   const handleScroll = (e: any) => {
     const { scrollTop, clientHeight, scrollHeight } = e.target
-    const threshold = scrollHeight - clientHeight * (1 + 0.3) 
+    const threshold = scrollHeight - clientHeight * (1 + 0.3)
 
     if (scrollTop >= threshold) {
       getProductsByScroll()
@@ -147,9 +147,9 @@ export const Search: React.FC = () => {
                   <div className={styles.productPhotoWrapper}>
                     <Image
                       src={`${IMAGES_URL}${item.photo[0]}`}
-                      alt={`${item.name}`}
+                      alt={item.name}
                       fill
-                      sizes='25vw'
+                      sizes='(max-width: 1120px) 33.3vw, (max-width: 950px) 50vw, (max-width: 744px) 33.3vw, (max-width: 540px) 50vw, (max-width: 380px) 100vw, 25vw'
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
