@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { IProduct } from '@/models/product'
 import { IMAGES_URL } from '@/shared/constants/urls'
 import { getNormalizedPrice } from '@/shared/utils/getNormalizedPrice'
+import { getProductPath } from '@/shared/routing/getProductPath'
 import styles from './ProductItem.module.scss'
 
 interface IProductItemProps {
@@ -14,7 +15,7 @@ interface IProductItemProps {
 export const ProductItem: React.FC<IProductItemProps> = ({ item, className }) => {
   return (
     <li className={classNames(styles.wrapper, className)}>
-      <Link href='/'>
+      <Link href={getProductPath(item._id)}>
         <div className={styles.photoWrapper}>
           <Image
             src={`${IMAGES_URL}${item.photo[0]}`}
