@@ -7,18 +7,18 @@ import styles from './Header.module.scss'
 import { Categories } from './Categories/Categories'
 import { Search } from './Search/Search'
 
-const getSubCategories = async () => {
+const getCategories = async () => {
   try {
-    return await productApi.getSubCategories()
+    return await productApi.getCategories()
   } catch (e) {}
 }
 
 export const Header: React.FC = async () => {
-  const subCategories = await getSubCategories()
+  const categories = await getCategories()
 
   return (
-    <section className={styles.container}>
-      <header className={styles.header}>
+    <header className={styles.container}>
+      <div className={styles.header}>
         <div className={styles.actionsWrapper}>
           <Link href='/'>
             <Image src={logoIcon} alt='Логотип компании HorseSmart' priority />
@@ -27,9 +27,9 @@ export const Header: React.FC = async () => {
           <Search />
         </div>
         <nav className={styles.secondaryData}>
-          {!!subCategories?.length && (
+          {!!categories?.length && (
             <ul className={styles.subCategories}>
-              {subCategories.slice(4, 10).map(item => (
+              {categories.map(item => (
                 <li key={item._id}>
                   <Link href='/' className={styles.subCategoryItem}>{item.name}</Link>
                 </li>
@@ -38,7 +38,7 @@ export const Header: React.FC = async () => {
           )}
           <a href={ADMIN_URL} target='_blank' className={styles.linkToSellerService}>Продавайте на HorseSmart</a>
         </nav>
-      </header>
-    </section>
+      </div>
+    </header>
   )
 }
