@@ -5,3 +5,4 @@ export interface ISubCategory extends Components.Schemas.ISubCategory {}
 export interface IProductQueryRequest extends Components.Schemas.IUserProductQueryRequest {}
 export interface IProductQueryResponse extends Components.Schemas.IUserProductQueryResponse {}
 export interface IProduct extends Components.Schemas.IProductResponse {}
+export interface IRandomProductQueryRequest extends Components.Schemas.IUserRandomProductQueryRequest {}

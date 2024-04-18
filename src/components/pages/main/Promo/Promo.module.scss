@@ -1,0 +1,243 @@
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 860px) {
+    display: block;
+  }
+}
+
+.mobileApp {
+  width: 65%;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 54px;
+
+  background-image: url('../../../../assets/images/promo.png');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+
+  @media screen and (max-width: 1220px) {
+    background-size: 60%;
+    background-position: 100% 100%;
+  }
+
+  @media screen and (max-width: 860px) {
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: 100% center;
+    padding: 30px 0 30px 21px;
+  }
+
+  @media screen and (max-width: 410px) {
+    padding: 21px 0 21px 15px;
+    background-size: 40%;
+  }
+}
+
+.mobileAppTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130%;
+  color: #FFFFFF;
+  max-width: 429px;
+  margin-bottom: 29px;
+
+  @media screen and (max-width: 860px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+    max-width: 242px;
+  }
+}
+
+.mobileAppLinksWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (max-width: 860px) {
+    flex-direction: row;
+    gap: 5px
+  }
+}
+
+.mobileAppLink {
+  width: 210px;
+  height: 48px;
+  border-radius: 10px;
+
+  @media screen and (max-width: 860px) {
+    width: 118px;
+    border-radius: 5px;
+    height: 27px;
+  }
+}
+
+.mobileAppLinkGooglePlayIcon {
+  @media screen and (max-width: 860px) {
+    width: 72.55px;
+    height: 17.95px;
+  }
+}
+
+.mobileAppLinkAppStoreIcon {
+  @media screen and (max-width: 860px) {
+    width: 64.71px;
+    height: 16.79px;
+  }
+}
+
+.sellerApp {
+  width: 35%;
+  padding-top: 35px;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #FFF 0%, #F4EBEA 51.98%);
+  box-shadow: var(--box-shadow);
+
+  @media screen and (max-width: 1220px) {
+    padding-top: 25px;
+  }
+
+  @media screen and (max-width: 860px) {
+    background: linear-gradient(90deg, #FFF 15.54%, #F4EBEA 57.36%);
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.sellerAppContent {
+  padding: 0 40px;
+
+  @media screen and (max-width: 1220px) {
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 860px) {
+    padding: 15px 0 15px 20px;
+    max-width: 60%;
+  }
+}
+
+.sellerAppTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 136%;
+  color: var(--text-color);
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 1220px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 860px) {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 16px;
+  }
+}
+
+.sellerAppDescription {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 130%;
+  color: var(--text-color);
+  margin-bottom: 35px;
+
+  @media screen and (max-width: 1220px) {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  @media screen and (max-width: 860px) {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 10px;
+  }
+}
+
+.becomeSellerLink {
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+
+  &:hover {
+    background-color: var(--main-color-hover);
+  }
+
+  @media screen and (max-width: 860px) {
+    display: inline-flex;
+    width: auto;
+    border-radius: 6px;
+    gap: 6px;
+    padding: 10px 25px;
+    margin-bottom: 0;
+  }
+}
+
+.becomeSellerLinkText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
+  }
+}
+
+.becomeSellerLinkIcon {
+  @media screen and (max-width: 860px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.becomeSellerImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.becomeSellerImageDesktop {
+  display: block;
+  @media screen and (max-width: 1220px) {
+    display: none;
+  }
+}
+
+.becomeSellerImageTablet {
+  display: none;
+  @media screen and (max-width: 1220px) {
+    display: block;
+  }
+  @media screen and (max-width: 860px) {
+    display: none;
+  }
+}
+
+.becomeSellerImageMobile {
+  display: none;
+  @media screen and (max-width: 860px) {
+    display: block;
+  }
+}
