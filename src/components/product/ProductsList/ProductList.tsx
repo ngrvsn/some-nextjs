@@ -8,15 +8,8 @@ interface IProductListProps {
   size?: number
 }
 
-const getRandomProducts = async (size: number) => {
-  try {
-    return await productApi.getRandomProducts({ size: size.toString() })
-  } catch (e) {}
-}
-
 export const ProductList: React.FC<IProductListProps> = async ({ title, size = 5 }) => {
-  const products = await getRandomProducts(size)
-
+  const products = await productApi.getRandomProducts({ size: size.toString() })
   return (
     <Section title={title}>
       {!!products?.length && (

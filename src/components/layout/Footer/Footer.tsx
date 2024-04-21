@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
               />
             </div>
           </div>
-          <Image src={promoBanner} alt='' className={styles.promoBanner} />
+          <Image src={promoBanner} alt='QR-код для скачивания мобильного приложения' className={styles.promoBanner} priority />
         </section>
         <section className={styles.info}>
           <div className={styles.infoHeader}>

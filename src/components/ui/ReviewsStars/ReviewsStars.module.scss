@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+}
+
+.valueIcon {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  z-index: 1000;
+}

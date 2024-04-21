@@ -3,6 +3,7 @@ import {
   IProduct,
   IProductQueryRequest,
   IProductQueryResponse,
+  IProductWithReviews,
   IRandomProductQueryRequest,
   ISubCategory,
   ISubCategoryResponse
@@ -15,9 +16,9 @@ export const productApi = {
     try {
       const response = await fetch(`${API_URL}category`)
       if (!response.ok) {
-        myError.stringify(response)
+        return myError.stringify(response)
       }
-      return await response.json()
+      return response.json()
     } catch (e) {
       throw e
     }
@@ -28,9 +29,9 @@ export const productApi = {
     try {
       const response = await fetch(`${API_URL}subCategory/${categoryId}`)
       if (!response.ok) {
-        myError.stringify(response)
+        return myError.stringify(response)
       }
-      return await response.json()
+      return response.json()
     } catch (e) {
       throw e
     }
@@ -39,9 +40,9 @@ export const productApi = {
     try {
       const response = await fetch(`${API_URL}subCategory`)
       if (!response.ok) {
-        myError.stringify(response)
+        return myError.stringify(response)
       }
-      return await response.json()
+      return response.json()
     } catch (e) {
       throw e
     }
@@ -60,9 +61,9 @@ export const productApi = {
         }&seller_id=${seller_id ?? ''}&subCategory_id=${subCategory_id ?? ''}`
       )
       if (!response.ok) {
-        myError.stringify(response)
+        return myError.stringify(response)
       }
-      return await response.json()
+      return response.json()
     } catch (e) {
       throw e
     }
@@ -75,9 +76,20 @@ export const productApi = {
         }`, { cache: 'no-store' }
       )
       if (!response.ok) {
-        myError.stringify(response)
+        return myError.stringify(response)
       }
-      return await response.json()
+      return response.json()
+    } catch (e) {
+      throw e
+    }
+  },
+  async getProduct(productId: string): Promise<IProductWithReviews> {
+    try {
+      const response = await fetch(`${API_URL}products/${productId}`)
+      if (!response.ok) {
+        return myError.stringify(response)
+      }
+      return response.json()
     } catch (e) {
       throw e
     }

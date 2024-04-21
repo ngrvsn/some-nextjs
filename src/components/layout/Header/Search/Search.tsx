@@ -11,6 +11,7 @@ import { IProduct, ISubCategory } from '@/models/product'
 import { DEBOUNCE_DELAY } from '@/shared/constants/app'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import { getNormalizedPrice } from '@/shared/utils/getNormalizedPrice'
+import { getProductPath } from '@/shared/routing/getProductPath'
 import { IMAGES_URL } from '@/shared/constants/urls'
 import styles from './Search.module.scss'
 
@@ -143,7 +144,7 @@ export const Search: React.FC = () => {
           <ul className={styles.productsList}>
             {products.map((item, index) => (
               <li key={`${item._id}?${index}`} className={styles.product}>
-                <Link href='/'>
+                <Link href={getProductPath(item._id)} onClick={() => setSearchValue('')}>
                   <div className={styles.productPhotoWrapper}>
                     <Image
                       src={`${IMAGES_URL}${item.photo[0]}`}

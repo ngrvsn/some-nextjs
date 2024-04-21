@@ -6,3 +6,5 @@ export interface IProductQueryRequest extends Components.Schemas.IUserProductQue
 export interface IProductQueryResponse extends Components.Schemas.IUserProductQueryResponse {}
 export interface IProduct extends Components.Schemas.IProductResponse {}
 export interface IRandomProductQueryRequest extends Components.Schemas.IUserRandomProductQueryRequest {}
+export interface IProductWithReviews extends Components.Schemas.IProductWithReviewResponse {}
+export interface ICharacteristic extends Components.Schemas.ICharacteristic {}

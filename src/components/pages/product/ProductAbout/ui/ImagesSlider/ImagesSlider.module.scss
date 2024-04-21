@@ -1,0 +1,167 @@
+.wrapper {
+  display: flex;
+  gap: 15px;
+
+  @media screen and (max-width: 570px) {
+    flex-direction: column-reverse;
+    align-items: center !important;
+    gap: 25px;
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+
+  @media screen and (max-width: 570px) {
+    flex-direction: row;
+  }
+}
+
+.sliderButton {
+  background-color: transparent;
+}
+
+.sliderButtonUpIcon {
+  @media screen and (max-width: 570px) {
+    rotate: -90deg;
+  }
+}
+
+.sliderButtonDownIcon {
+  rotate: 180deg;
+  @media screen and (max-width: 570px) {
+    rotate: 90deg;
+  }
+}
+
+.imagesList {
+  position: relative;
+  overflow-y: auto;
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-height: 510px;
+  }
+
+  @media screen and (max-width: 570px) {
+    max-width: 300px;
+    max-height: none;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 425px) {
+    max-width: 250px;
+  }
+
+  @media screen and (max-width: 375px) {
+    max-width: 200px;
+  }
+}
+
+.imagesItemWrapper {
+  padding-bottom: 12px;
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 18px;
+  }
+
+  @media screen and (max-width: 570px) {
+    padding-bottom: 0;
+    padding-right: 12px;
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+.imagesItem {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.05);
+  border-width: 1px;
+  border-style: solid;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 87px;
+    height: 87px;
+  }
+
+  @media screen and (max-width: 570px) {
+    width: 66px;
+    height: 66px;
+  }
+}
+
+.selectedImageContainer {
+  position: relative;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.selectedImage {
+  position: relative;
+  overflow: hidden;
+  width: 410px;
+  height: 410px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid #EDEDED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.selectedImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+
+.shareButton {
+  position: absolute;
+  z-index: 1;
+  top: -22px;
+  right: -15px;
+  width: 50px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.09);
+
+  @media screen and (max-width: 768px) {
+    right: -5px;
+  }
+}
+
+.characteristicItem {
+  display: flex;
+  gap: 6px;
+}

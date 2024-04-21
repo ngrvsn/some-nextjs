@@ -5,14 +5,8 @@ import { IMAGES_URL } from '@/shared/constants/urls'
 import { Section } from '@/components/ui'
 import styles from './Categories.module.scss'
 
-const getCategories = async () => {
-  try {
-    return await productApi.getCategories()
-  } catch (e) {}
-}
-
 export const Categories: React.FC = async () => {
-  const categories = await getCategories()
+  const categories = await productApi.getCategories()
   return (
     <Section title='Категории'>
       {!!categories?.length && (

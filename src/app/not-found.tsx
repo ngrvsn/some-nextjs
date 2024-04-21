@@ -1,5 +1,5 @@
 export default function NotFound() {
   return (
-    <h1>GG</h1>
+    <h1>Not Found</h1>
   )
 }
