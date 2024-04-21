@@ -1,0 +1,54 @@
+.wrapper {
+  background-color: var(--block-bg-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  padding: 18px 15px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 10px;
+  }
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 10px;
+  }
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-color);
+
+  @media screen and (max-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+.howToBuyButton {
+  width: 100%;
+  padding: 15px 0;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--main-color-hover);
+  }
+}

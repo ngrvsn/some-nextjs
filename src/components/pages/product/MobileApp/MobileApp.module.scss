@@ -1,0 +1,133 @@
+.wrapper {
+  padding: 21px 15px;
+  background-color: var(--block-bg-color);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+
+  @media screen and (max-width: 1030px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 1030px) {
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 450px) {
+    align-items: center;
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 125%;
+  margin: 17px 0 32px;
+  max-width: 198px;
+  text-align: center;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 14px;
+    margin: 9px 0 19px;
+    max-width: 190px;
+  }
+
+  @media screen and (max-width: 1030px) {
+    text-align: left;
+    max-width: none;
+    margin: 10px 0 17px;
+  }
+
+  @media screen and (max-width: 450px) {
+    max-width: 190px;
+    text-align: center;
+  }
+}
+
+.desktopQrCode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 1030px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: flex;
+  }
+}
+
+.imageDescription {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 125%;
+  margin: 16px 0 27px;
+  max-width: 159px;
+  text-align: center;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 12px;
+    margin: 16px 0 19px;
+  }
+}
+
+.mobileAppLinks {
+  display: flex;
+  gap: 8px;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 1030px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 450px) {
+    justify-content: center;
+  }
+}
+
+.mobileAppLink {
+  width: 176px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+.mobileAppLinkGooglePlayIcon {
+  width: 108px;
+  height: 26px;
+}
+
+.mobileAppLinkAppStoreIcon {
+  width: 96px;
+  height: 25px;
+}
+
+.mobileQrCode {
+  display: none;
+
+  @media screen and (max-width: 1030px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
+}

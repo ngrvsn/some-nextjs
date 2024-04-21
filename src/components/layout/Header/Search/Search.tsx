@@ -144,7 +144,7 @@ export const Search: React.FC = () => {
           <ul className={styles.productsList}>
             {products.map((item, index) => (
               <li key={`${item._id}?${index}`} className={styles.product}>
-                <Link href={getProductPath(item._id)}>
+                <Link href={getProductPath(item._id)} onClick={() => setSearchValue('')}>
                   <div className={styles.productPhotoWrapper}>
                     <Image
                       src={`${IMAGES_URL}${item.photo[0]}`}
