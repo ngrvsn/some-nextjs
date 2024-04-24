@@ -1,0 +1,1 @@
+export interface ISellerShowcase extends Components.Schemas.ISellerShowcaseResponse {}
