@@ -1,1 +1,1 @@
-export const getProductPath = (productId: string): string => `/products/${productId}`
+export const getProductPath = (productId: string): string => `/product/${productId}`

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import goToSellerIcon from '@/assets/icons/go-to-seller.svg'
 import { ICharacteristic, IProductWithReviews } from '@/models/product'
 import { ProductCharacteristic } from '@/components/product/ProductCharacteristic/ProductCharacteristic'
+import { getSellerPath } from '@/shared/routing/getSellerPath'
 import styles from './ProductDescription.module.scss'
 
 interface IProductDescriptionProps {
@@ -41,10 +42,12 @@ export const ProductDescription: React.FC<IProductDescriptionProps> = ({ product
       )}
       <div className={styles.info}>
         <p className={styles.infoText}>Информация о технических характеристиках, комплекте поставки, стране изготовления, внешнем виде и цвете товара носит справочный характер и основывается на последних доступных к моменту публикации сведениях</p>
-        <Link href='/' className={styles.goToSeller}>
-          <span className={styles.goToSellerText}>Все товары продавца</span>
-          <Image src={goToSellerIcon} alt='' />
-        </Link>
+        {product.product?.seller_id && (
+          <Link href={getSellerPath(product.product.seller_id._id)} className={styles.goToSeller}>
+            <span className={styles.goToSellerText}>Все товары продавца</span>
+            <Image src={goToSellerIcon} alt='' />
+          </Link>
+        )}
       </div>
     </section>
   )
