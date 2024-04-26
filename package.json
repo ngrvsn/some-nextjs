@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mivis/petmart-api": "^1.2.157",
+    "@mivis/petmart-api": "^1.2.160",
     "classnames": "^2.5.1",
     "next": "^14.1.4",
     "react": "^18",

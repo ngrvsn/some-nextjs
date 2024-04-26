@@ -10,6 +10,7 @@ import goToIcon from '@/assets/icons/go-to.svg'
 import { ICategory, ISubCategory } from '@/models/product'
 import { productApi } from '@/api/productApi'
 import { IMAGES_URL } from '@/shared/constants/urls'
+import { getCategoryPath } from '@/shared/routing/getCategoryPath'
 import styles from './Categories.module.scss'
 
 export const Categories: React.FC = () => {
@@ -23,7 +24,7 @@ export const Categories: React.FC = () => {
   React.useEffect(() => {
     const getCategories = async () => {
       try {
-        const responseData = await productApi.getCategories()
+        const responseData = await productApi.getCategories() as ICategory[]
         setCategories(responseData)
         if (responseData.length) {
           onCategorySelect(responseData[0]._id)
@@ -111,7 +112,7 @@ export const Categories: React.FC = () => {
               <div key={index} className={styles.subCategoriesRow}>
                 {subCategories.map((item) => (
                   <li key={item._id} className={styles.subCategory}>
-                    <Link href='/' className={styles.subCategoryText}>
+                    <Link href={getCategoryPath(item._id)} className={styles.subCategoryText} onClick={() => setIsModalOpen(false)}>
                       {item.name}
                     </Link>
                   </li>
@@ -154,7 +155,8 @@ export const Categories: React.FC = () => {
                   {subCategories?.[item._id]?.map((item) => (
                     <Link
                       key={item._id}
-                      href='/'
+                      href={getCategoryPath(item._id)}
+                      onClick={() => setIsModalOpen(false)}
                       className={styles.mobileSubCategoryItem}
                     >
                       {item.name}

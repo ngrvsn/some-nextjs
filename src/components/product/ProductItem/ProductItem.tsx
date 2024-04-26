@@ -10,12 +10,13 @@ import styles from './ProductItem.module.scss'
 interface IProductItemProps {
   item: IProduct
   className?: string
+  onNewPage?: boolean
 }
 
-export const ProductItem: React.FC<IProductItemProps> = ({ item, className }) => {
+export const ProductItem: React.FC<IProductItemProps> = ({ item, className, onNewPage = false }) => {
   return (
     <li className={classNames(styles.wrapper, className)}>
-      <Link href={getProductPath(item._id)}>
+      <Link href={getProductPath(item._id)} target={onNewPage ? '_blank' : undefined}>
         <div className={styles.photoWrapper}>
           <Image
             src={`${IMAGES_URL}${item.photo[0]}`}
