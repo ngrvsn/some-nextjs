@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import classNames from 'classnames'
 import { DownloadAppLink } from '@/components/ui'
 import promoBanner from '@/assets/images/footer-promo.png'
@@ -36,13 +37,15 @@ export const Footer: React.FC = () => {
         </section>
         <section className={styles.info}>
           <div className={styles.infoHeader}>
-            <Image
-              src={logo}
-              width={236}
-              height={59}
-              alt='Логотип компании HorseSmart'
-              className={styles.logo}
-            />
+            <Link href='/'>
+              <Image
+                src={logo}
+                width={236}
+                height={59}
+                alt='Логотип компании HorseSmart'
+                className={styles.logo}
+              />
+            </Link>
             <div className={styles.infoLinksWrapper}>
               <a
                 href={SUPPORT_LINK}

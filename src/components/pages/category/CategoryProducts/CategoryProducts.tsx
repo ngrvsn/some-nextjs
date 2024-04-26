@@ -2,17 +2,17 @@
 import React from 'react'
 import { toast } from 'react-toastify'
 import { ProductItem } from '@/components/product/ProductItem/ProductItem'
-import { IProduct } from '@/models/product'
+import { ICategoryPageData, IProduct } from '@/models/product'
 import { productApi } from '@/api/productApi'
 import { useObserver } from '@/shared/hooks/useObserver'
-import styles from './SellerProducts.module.scss'
+import styles from './CategoryProducts.module.scss'
 
-interface ISellerProductsProps {
-  sellerId: string
+interface ICategoryProductsProps {
+  category: ICategoryPageData
 }
 
-export const SellerProducts: React.FC<ISellerProductsProps> = ({
-  sellerId
+export const CategoryProducts: React.FC<ICategoryProductsProps> = ({
+  category
 }) => {
   const [products, setProducts] = React.useState<IProduct[]>([])
   const [hasMoreProducts, setHasMoreProducts] = React.useState(true)
@@ -26,12 +26,13 @@ export const SellerProducts: React.FC<ISellerProductsProps> = ({
       const responseData = await productApi.getProducts({
         skip: products.length.toString(),
         limit: '24',
-        seller_id: sellerId
+        category_id: category?.category?.value ?? '',
+        subCategory_id: category?.subCategory?.value ?? ''
       })
       setProducts(prev => [...prev, ...responseData.products])
       setHasMoreProducts(responseData.products.length > 0)
     } catch (e) {
-      toast.error('Не удалось получить товары продавца')
+      toast.error('Не удалось получить товары')
     } finally {
       setIsLoading(false)
     }
@@ -40,16 +41,17 @@ export const SellerProducts: React.FC<ISellerProductsProps> = ({
   useObserver(lastElementRef, hasMoreProducts, isLoading, getProducts)
 
   return (
-    <section>
-      <h2 className={styles.title}>Все товары</h2>
+    <>
       {!!products.length && (
-        <ul className={styles.list}>
-          {products.map((item, index) => (
-            <ProductItem key={`${item._id}?${index}`} item={item} onNewPage />
-          ))}
-        </ul>
+        <section className={styles.wrapper}>
+          <ul className={styles.list}>
+            {products.map((item, index) => (
+              <ProductItem key={`${item._id}?${index}`} item={item} className={styles.item} onNewPage />
+            ))}
+          </ul>
+        </section>
       )}
       <div ref={lastElementRef} />
-    </section>
+    </>
   )
 }

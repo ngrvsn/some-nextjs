@@ -13,6 +13,7 @@ import { useDebounce } from '@/shared/hooks/useDebounce'
 import { getNormalizedPrice } from '@/shared/utils/getNormalizedPrice'
 import { getProductPath } from '@/shared/routing/getProductPath'
 import { IMAGES_URL } from '@/shared/constants/urls'
+import { getCategoryPath } from '@/shared/routing/getCategoryPath'
 import styles from './Search.module.scss'
 
 export const Search: React.FC = () => {
@@ -121,7 +122,7 @@ export const Search: React.FC = () => {
           <ul>
             {subCategories.map((item) => (
               <li key={item._id}>
-                <Link href='/' className={styles.subCategory}>
+                <Link href={getCategoryPath(item._id)} className={styles.subCategory} onClick={() => setSearchValue('')}>
                   <div>
                     <strong className={styles.subCategoryName}>
                       {item.name}

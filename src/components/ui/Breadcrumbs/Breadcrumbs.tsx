@@ -17,7 +17,7 @@ export const Breadcrumbs: React.FC<IBreadcrumbsProps> = ({ items, className }) =
       <ul className={styles.list}>
         {items.map((item, index) => (
           <li key={index} className={styles.item}>
-            <Link href={item.name} className={styles.itemName}>{item.name}</Link>
+            <Link href={item.href} className={styles.itemName}>{item.name}</Link>
           </li>
         ))}
       </ul>

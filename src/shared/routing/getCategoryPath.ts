@@ -1,0 +1,1 @@
+export const getCategoryPath = (categoryId: string): string => `/category/${categoryId}`

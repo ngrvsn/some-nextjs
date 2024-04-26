@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import logoIcon from '@/assets/icons/logo.svg'
+import { ICategory } from '@/models/product'
 import { productApi } from '@/api/productApi'
 import { ADMIN_URL } from '@/shared/constants/urls'
+import { getCategoryPath } from '@/shared/routing/getCategoryPath'
 import styles from './Header.module.scss'
 import { Categories } from './Categories/Categories'
 import { Search } from './Search/Search'
 
 const getCategories = async () => {
   try {
-    return await productApi.getCategories()
+    return await productApi.getCategories() as ICategory[]
   } catch (e) {}
 }
 
@@ -31,7 +33,7 @@ export const Header: React.FC = async () => {
             <ul className={styles.subCategories}>
               {categories.map(item => (
                 <li key={item._id}>
-                  <Link href='/' className={styles.subCategoryItem}>{item.name}</Link>
+                  <Link href={getCategoryPath(item._id)} className={styles.subCategoryItem}>{item.name}</Link>
                 </li>
               ))}
             </ul>
