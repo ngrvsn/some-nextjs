@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  front:
+    image: horsesmart-web-front
+    container_name: horsesmart-web-front
+    build: .
+    ports:
+      - 8080:3000
+    networks:
+      - horsesmart
+
+
+networks:
+  horsesmart:
+    name: horsesmart
