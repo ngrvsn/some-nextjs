@@ -41,7 +41,7 @@ export const CategoryProducts: React.FC<ICategoryProductsProps> = ({
   useObserver(lastElementRef, hasMoreProducts, isLoading, getProducts)
 
   return (
-    <div>
+    <div style={{ flex: 1 }}>
       {!!products.length && (
         <section className={styles.wrapper}>
           <ul className={styles.list}>
