@@ -9,5 +9,5 @@ export default function ErrorPage({
   reset: () => void
 }) {
   const { status } = myError.parse(error.message)
-  return <Error status={status} />
+  return <Error status={status || 500} />
 }
