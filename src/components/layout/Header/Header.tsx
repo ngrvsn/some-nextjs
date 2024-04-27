@@ -33,7 +33,7 @@ export const Header: React.FC = async () => {
             <ul className={styles.subCategories}>
               {categories.map(item => (
                 <li key={item._id}>
-                  <Link href={getCategoryPath(item._id)} className={styles.subCategoryItem}>{item.name}</Link>
+                  <Link href={getCategoryPath(item.slug)} className={styles.subCategoryItem}>{item.name}</Link>
                 </li>
               ))}
             </ul>

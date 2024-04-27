@@ -16,12 +16,13 @@ interface IProductItemProps {
 export const ProductItem: React.FC<IProductItemProps> = ({ item, className, onNewPage = false }) => {
   return (
     <li className={classNames(styles.wrapper, className)}>
-      <Link href={getProductPath(item._id)} target={onNewPage ? '_blank' : undefined}>
+      <Link href={getProductPath(item.slug)} target={onNewPage ? '_blank' : undefined}>
         <div className={styles.photoWrapper}>
           <Image
             src={`${IMAGES_URL}${item.photo[0]}`}
             alt={item.name}
             fill
+            priority
             sizes='(max-width: 768px) 25vw, (max-width: 590px) 33vw, (max-width: 428px) 50vw, 20vw'
             style={{ objectFit: 'cover' }}
           />

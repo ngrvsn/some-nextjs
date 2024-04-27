@@ -1,2 +1,2 @@
-export const getSellerPath = (sellerId: string): string =>
-  `/seller/${sellerId}`
+export const getSellerPath = (sellerSlug: string): string =>
+  `/seller/${sellerSlug}`

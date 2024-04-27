@@ -41,7 +41,7 @@ export const CategoryProducts: React.FC<ICategoryProductsProps> = ({
   useObserver(lastElementRef, hasMoreProducts, isLoading, getProducts)
 
   return (
-    <>
+    <div>
       {!!products.length && (
         <section className={styles.wrapper}>
           <ul className={styles.list}>
@@ -52,6 +52,6 @@ export const CategoryProducts: React.FC<ICategoryProductsProps> = ({
         </section>
       )}
       <div ref={lastElementRef} />
-    </>
+    </div>
   )
 }

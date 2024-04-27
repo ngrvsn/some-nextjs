@@ -15,7 +15,7 @@ export const Categories: React.FC = async () => {
         <ul className={styles.categoriesList}>
           {categories.map(item => (
             <li key={item._id} className={styles.categoryItem}>
-              <Link href={getCategoryPath(item._id)}>
+              <Link href={getCategoryPath(item.slug)}>
                 <div className={styles.categoryPhotoWrapper}>
                   <Image
                     src={`${IMAGES_URL}${item.photo}`}

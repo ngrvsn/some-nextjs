@@ -1,1 +1,1 @@
-export const getCategoryPath = (categoryId: string): string => `/category/${categoryId}`
+export const getCategoryPath = (categorySlug: string): string => `/category/${categorySlug}`

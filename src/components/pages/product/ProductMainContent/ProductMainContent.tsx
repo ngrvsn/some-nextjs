@@ -15,8 +15,8 @@ export const ProductMainContent: React.FC<IProductMainContentProps> = ({ product
     <>
       <Breadcrumbs
         items={[
-          { name: product.product.category_id.name, href: getCategoryPath(product.product.category_id._id) },
-          { name: product.product.subCategory_id.name, href: getCategoryPath(product.product.subCategory_id._id) }
+          { name: product.product.category_id.name, href: getCategoryPath(product.product.category_id.slug) },
+          { name: product.product.subCategory_id.name, href: getCategoryPath(product.product.subCategory_id.slug) }
         ]}
         className={styles.breadcrumbs}
       />
