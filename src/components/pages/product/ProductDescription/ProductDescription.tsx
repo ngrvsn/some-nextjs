@@ -43,7 +43,7 @@ export const ProductDescription: React.FC<IProductDescriptionProps> = ({ product
       <div className={styles.info}>
         <p className={styles.infoText}>Информация о технических характеристиках, комплекте поставки, стране изготовления, внешнем виде и цвете товара носит справочный характер и основывается на последних доступных к моменту публикации сведениях</p>
         {product.product?.seller_id && (
-          <Link href={getSellerPath(product.product.seller_id._id)} className={styles.goToSeller}>
+          <Link href={getSellerPath(product.product.seller_id.slug)} className={styles.goToSeller}>
             <span className={styles.goToSellerText}>Все товары продавца</span>
             <Image src={goToSellerIcon} alt='' />
           </Link>

@@ -17,7 +17,7 @@ export const productApi = {
     isParsed = false
   ): Promise<IParsedCategory[] | ICategory[]> {
     try {
-      const response = await fetch(`${API_URL}category?parsed=${isParsed}`)
+      const response = await fetch(`${API_URL}category?parsed=${isParsed}`, { cache: 'no-store' })
       if (!response.ok) {
         return myError.stringify(response)
       }
@@ -30,7 +30,7 @@ export const productApi = {
     categoryId: string
   ): Promise<ISubCategoryResponse> {
     try {
-      const response = await fetch(`${API_URL}subCategory/${categoryId}`)
+      const response = await fetch(`${API_URL}subCategory/${categoryId}`, { cache: 'no-store' })
       if (!response.ok) {
         return myError.stringify(response)
       }
@@ -41,7 +41,7 @@ export const productApi = {
   },
   async getSubCategories(): Promise<ISubCategory[]> {
     try {
-      const response = await fetch(`${API_URL}subCategory`)
+      const response = await fetch(`${API_URL}subCategory`, { cache: 'no-store' })
       if (!response.ok) {
         return myError.stringify(response)
       }
@@ -64,7 +64,7 @@ export const productApi = {
           name ?? ''
         }&seller_id=${seller_id ?? ''}&category_id=${
           category_id ?? ''
-        }&subCategory_id=${subCategory_id ?? ''}`
+        }&subCategory_id=${subCategory_id ?? ''}`, { cache: 'no-store' }
       )
       if (!response.ok) {
         return myError.stringify(response)
@@ -95,7 +95,7 @@ export const productApi = {
   },
   async getProduct(productId: string): Promise<IProductWithReviews> {
     try {
-      const response = await fetch(`${API_URL}products/${productId}`)
+      const response = await fetch(`${API_URL}products/${productId}`, { cache: 'no-store' })
       if (!response.ok) {
         return myError.stringify(response)
       }

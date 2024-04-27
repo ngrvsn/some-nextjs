@@ -19,7 +19,7 @@ export const CategoryWrapper: React.FC<ICategoryWrapperProps> = ({ data, categor
           .filter((item) => item)
           .map((el: any) => ({
             name: el.title,
-            href: getCategoryPath(el.value)
+            href: getCategoryPath(el.slug)
           }))}
         className={styles.navigation}
       />

@@ -5,7 +5,7 @@ import { myError } from '@/shared/utils/myError'
 export const sellerApi = {
   async getSellerData(sellerId: string): Promise<ISellerShowcase> {
     try {
-      const response = await fetch(`${API_URL}seller/showcase/${sellerId}`)
+      const response = await fetch(`${API_URL}seller/showcase/${sellerId}`, { cache: 'no-store' })
       if (!response.ok) {
         return myError.stringify(response)
       }

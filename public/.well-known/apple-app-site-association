@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "ZPMMSZN3A9.com.dvmarket.app",
+        "paths": ["/product/*"]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": ["ZPMMSZN3A9.com.dvmarket.app"]
+  },
+  "webcredentials": {
+    "apps": ["ZPMMSZN3A9.com.dvmarket.app"]
+  }
+}

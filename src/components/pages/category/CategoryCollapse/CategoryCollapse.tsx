@@ -54,7 +54,7 @@ export const CategoryCollapse: React.FC<ICategoryCollapseProps> = ({
             {category.children.map((subCategory) => (
               <Link
                 key={subCategory.value}
-                href={getCategoryPath(subCategory.value)}
+                href={getCategoryPath(subCategory.slug)}
                 className={styles.subCategoryItem}
                 style={{ backgroundColor: data.subCategory?.value === subCategory.value ? '#F6F6F6' : 'transparent' }}
               >

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.dvmarket.app",
+      "sha256_cert_fingerprints": [
+        "9E:B2:24:1B:09:E5:D2:B3:4E:55:9B:A7:45:1D:00:11:5D:B8:95:02:FF:A3:F3:4C:3C:96:C9:32:00:52:9E:15"
+      ]
+    }
+  }
+]

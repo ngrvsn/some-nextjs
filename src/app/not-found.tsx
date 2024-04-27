@@ -1,5 +1,5 @@
+import { Error } from '@/components/error/Error'
+
 export default function NotFound() {
-  return (
-    <h1>Not Found</h1>
-  )
+  return <Error status={404} />
 }

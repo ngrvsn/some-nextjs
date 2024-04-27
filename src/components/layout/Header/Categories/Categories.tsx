@@ -112,7 +112,7 @@ export const Categories: React.FC = () => {
               <div key={index} className={styles.subCategoriesRow}>
                 {subCategories.map((item) => (
                   <li key={item._id} className={styles.subCategory}>
-                    <Link href={getCategoryPath(item._id)} className={styles.subCategoryText} onClick={() => setIsModalOpen(false)}>
+                    <Link href={getCategoryPath(item.slug)} className={styles.subCategoryText} onClick={() => setIsModalOpen(false)}>
                       {item.name}
                     </Link>
                   </li>
@@ -155,7 +155,7 @@ export const Categories: React.FC = () => {
                   {subCategories?.[item._id]?.map((item) => (
                     <Link
                       key={item._id}
-                      href={getCategoryPath(item._id)}
+                      href={getCategoryPath(item.slug)}
                       onClick={() => setIsModalOpen(false)}
                       className={styles.mobileSubCategoryItem}
                     >

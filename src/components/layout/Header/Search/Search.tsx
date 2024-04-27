@@ -122,7 +122,7 @@ export const Search: React.FC = () => {
           <ul>
             {subCategories.map((item) => (
               <li key={item._id}>
-                <Link href={getCategoryPath(item._id)} className={styles.subCategory} onClick={() => setSearchValue('')}>
+                <Link href={getCategoryPath(item.slug)} className={styles.subCategory} onClick={() => setSearchValue('')}>
                   <div>
                     <strong className={styles.subCategoryName}>
                       {item.name}
@@ -145,12 +145,13 @@ export const Search: React.FC = () => {
           <ul className={styles.productsList}>
             {products.map((item, index) => (
               <li key={`${item._id}?${index}`} className={styles.product}>
-                <Link href={getProductPath(item._id)} onClick={() => setSearchValue('')}>
+                <Link href={getProductPath(item.slug)} onClick={() => setSearchValue('')}>
                   <div className={styles.productPhotoWrapper}>
                     <Image
                       src={`${IMAGES_URL}${item.photo[0]}`}
                       alt={item.name}
                       fill
+                      priority
                       sizes='(max-width: 1120px) 33.3vw, (max-width: 950px) 50vw, (max-width: 744px) 33.3vw, (max-width: 540px) 50vw, (max-width: 380px) 100vw, 25vw'
                       style={{ objectFit: 'cover' }}
                     />
