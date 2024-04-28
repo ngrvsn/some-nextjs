@@ -4,6 +4,7 @@ services:
   front:
     image: horsesmart-web-front
     container_name: horsesmart-web-front
+    restart: on-failure
     build: .
     ports:
       - 3000:3000
