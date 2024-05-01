@@ -68,7 +68,7 @@ export const ImageSlider: React.FC<IImageSliderProps> = ({
     >
       <aside className={styles.slider}>
         {!isSmallListImages && (
-          <button className={styles.sliderButton} onClick={onScrollUp}>
+          <button className={styles.sliderButton} onClick={onScrollUp} aria-label='Поднять вверх'>
             <Image
               src={sliderArrowIcon}
               alt='Поднятие вверх'
@@ -99,10 +99,10 @@ export const ImageSlider: React.FC<IImageSliderProps> = ({
           ))}
         </ul>
         {!isSmallListImages && (
-          <button className={styles.sliderButton} onClick={onScrollDown}>
+          <button className={styles.sliderButton} onClick={onScrollDown} aria-label='Поднять вниз'>
             <Image
               src={sliderArrowIcon}
-              alt='Поднятие вверх'
+              alt='Поднятие вниз'
               className={styles.sliderButtonDownIcon}
             />
           </button>
@@ -121,7 +121,7 @@ export const ImageSlider: React.FC<IImageSliderProps> = ({
             />
           </div>
         </div>
-        <button className={styles.shareButton} onClick={copyProductLink}>
+        <button className={styles.shareButton} onClick={copyProductLink} aria-label='Поделиться товаром'>
           <Image src={shareIcon} alt='Поделиться товаром' />
         </button>
       </div>

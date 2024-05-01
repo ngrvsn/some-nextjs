@@ -16,7 +16,7 @@ export const ProductPrice: React.FC<IProductPriceProps> = ({ product }) => {
         <Image src={roubleIcon} alt='Рубль' />
         <strong className={styles.price}>{getNormalizedPrice(product.product.price)}</strong>
       </div>
-      <button className={styles.howToBuyButton}>Как купить?</button>
+      <button disabled className={styles.howToBuyButton}>Как купить?</button>
     </section>
   )
 }

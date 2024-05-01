@@ -48,7 +48,11 @@
   color: #FFFFFF;
   text-align: center;
 
-  &:hover {
-    background-color: var(--main-color-hover);
-  }
+  // Удалить потом
+  opacity: 0.4;
+  cursor: not-allowed;
+
+  // &:hover {
+  //   background-color: var(--main-color-hover);
+  // }
 }

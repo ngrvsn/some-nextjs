@@ -108,6 +108,7 @@ export const Search: React.FC = () => {
         <button
           className={styles.searchButton}
           onClick={() => searchValueRef?.current?.focus()}
+          aria-label='Поиск'
         >
           <Image src={searchIconWhite} alt='' />
         </button>

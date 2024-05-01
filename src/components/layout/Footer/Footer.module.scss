@@ -142,17 +142,24 @@
 
 .promoBanner {
   margin-right: 94px;
-  max-width: 60%;
+  max-width: 30rem;
   height: auto;
   object-fit: contain;
 
-  @media screen and (max-width: 970px) {
-    margin-right: 54px;
+  @media screen and (max-width: 1000px) {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 940px) {
+    max-width: 25rem;
   }
 
   @media screen and (max-width: 860px) {
-    margin-right: 30px;
     flex-grow: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 20rem;
   }
 
   @media screen and (max-width: 670px) {

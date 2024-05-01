@@ -19,7 +19,7 @@ export const Categories: React.FC = async () => {
                 <div className={styles.categoryPhotoWrapper}>
                   <Image
                     src={`${IMAGES_URL}${item.photo}`}
-                    alt={item.name}
+                    alt={`Категория ${item.name}`}
                     fill
                     sizes='(max-width: 590px) 33.3vw, 20vw'
                     style={{ objectFit: 'contain' }}

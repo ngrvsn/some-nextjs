@@ -5,7 +5,7 @@ import { DownloadAppLink } from '@/components/ui'
 import promoBanner from '@/assets/images/footer-promo.png'
 import logo from '@/assets/icons/logo.svg'
 import telegramIcon from '@/assets/icons/telegram.svg'
-import { PRIVACY_POLICY_LINK, SUPPORT_LINK } from '@/shared/constants/urls'
+import { CURRENT_SITE_URL, PRIVACY_POLICY_LINK, SUPPORT_LINK } from '@/shared/constants/urls'
 import styles from './Footer.module.scss'
 
 export const Footer: React.FC = () => {
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
         </section>
         <section className={styles.info}>
           <div className={styles.infoHeader}>
-            <Link href='/'>
+            <Link href={CURRENT_SITE_URL as string}>
               <Image
                 src={logo}
                 width={236}

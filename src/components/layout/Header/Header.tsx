@@ -3,7 +3,7 @@ import Link from 'next/link'
 import logoIcon from '@/assets/icons/logo.svg'
 import { ICategory } from '@/models/product'
 import { productApi } from '@/api/productApi'
-import { ADMIN_URL } from '@/shared/constants/urls'
+import { ADMIN_URL, CURRENT_SITE_URL } from '@/shared/constants/urls'
 import { getCategoryPath } from '@/shared/routing/getCategoryPath'
 import styles from './Header.module.scss'
 import { Categories } from './Categories/Categories'
@@ -22,7 +22,7 @@ export const Header: React.FC = async () => {
     <header className={styles.container}>
       <div className={styles.header}>
         <div className={styles.actionsWrapper}>
-          <Link href='/'>
+          <Link href={CURRENT_SITE_URL as string}>
             <Image src={logoIcon} alt='Логотип компании HorseSmart' priority />
           </Link>
           <Categories />

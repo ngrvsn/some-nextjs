@@ -18,7 +18,7 @@ export const DownloadAppLink: React.FC<IDownloadAppLinkProps> = ({
 }) => {
   const isAndroidType = type === 'android'
   return (
-    <a href={isAndroidType ? DOWNLOAD_ANDROID_APP_LINK : DOWNLOAD_IOS_APP_LINK} className={classNames(styles.wrapper, wrapperClassName)}>
+    <a href={isAndroidType ? DOWNLOAD_ANDROID_APP_LINK : DOWNLOAD_IOS_APP_LINK} target='_blank' className={classNames(styles.wrapper, wrapperClassName)}>
       <Image
         src={isAndroidType ? googlePlayIcon : appleIcon}
         alt={isAndroidType ? 'Скачать в Google Play' : 'Скачать в App Store'}
