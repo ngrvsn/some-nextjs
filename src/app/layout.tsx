@@ -3,7 +3,7 @@ import Script from 'next/script'
 import Image from 'next/image'
 import { ToastContainer } from 'react-toastify'
 import { Wrapper } from '@/components/layout/Wrapper/Wrapper'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import 'react-toastify/dist/ReactToastify.css'
 import '@/styles/index.scss'
 import '@mivis/petmart-api'
@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   itunes: {
     appId: '6450919003'
   }
+}
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 1
 }
 
 export default function RootLayout({
