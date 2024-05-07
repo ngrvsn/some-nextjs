@@ -77,16 +77,6 @@ export const Landing: React.FC = () => {
                 window.location.href = 'https://apple.co/3GRdRmY'
               }
             }
-            if (/(android)/i.test(navigator.userAgent)) {
-              const params = new URLSearchParams(document.location.search);
-              const redirectToMobileApp = params.get("redirectMobileApp");
-              if (redirectToMobileApp !== null) {
-                setTimeout(() => {
-                  window.location.href = 'https://horsesmart.store/landing'
-                }, 1000)
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.dvmarket.app'
-              }
-            }
             `
           }}
         />
