@@ -1,0 +1,121 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 50px;
+
+  @media screen and (max-width: 550px) {
+    margin-bottom: 50px;
+  }
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 65px;
+
+  @media screen and (max-width: 550px) {
+    margin-bottom: 35px;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 26px !important;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 550px) {
+    display: block;
+  }
+}
+
+.qrWrapper {
+  padding-left: 133px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 870px) {
+    padding-left: 0;
+    margin-right: 50px;
+  }
+
+  @media screen and (max-width: 550px) {
+    margin-right: 0;
+  }
+}
+
+.qrImage {
+  @media screen and (max-width: 550px) {
+    width: 165px;
+    height: 165px;
+    margin-bottom: 33px;
+  }
+}
+
+.descriptionText {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.qrText {
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
+}
+
+.line {
+  width: 1px;
+  background-color: #E1E1E1;
+  align-self: stretch;
+  margin-left: 70px;
+  margin-right: 53px;
+
+  @media screen and (max-width: 870px) {
+    display: none;
+  }
+}
+
+.linksWrapper {
+  max-width: 343px;
+}
+
+.downloadButton {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 13px;
+  background-color: var(--text-color);
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFCFC;
+
+  &:hover {
+    background-color: #20151c;
+  }
+}
+
+.downloadApkButton {
+  background-color: var(--main-color);
+  color: #FFFFFF;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: var(--main-color-hover);
+  }
+}
+
+.googleDownloadText {
+  margin-top: 20px;
+}
