@@ -29,9 +29,7 @@ export const Categories: React.FC = () => {
         if (responseData.length) {
           onCategorySelect(responseData[0]._id)
         }
-      } catch (e) {
-        toast.error('Ошибка при получении категорий')
-      }
+      } catch (e) {}
     }
     getCategories()
   }, [])
