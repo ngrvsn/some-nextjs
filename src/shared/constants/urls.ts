@@ -7,3 +7,4 @@ export const SUPPORT_LINK = process.env.NEXT_PUBLIC_SUPPORT_LINK
 export const PRIVACY_POLICY_LINK = process.env.NEXT_PUBLIC_PRIVACY_POLICY_LINK
 export const PRODUCTION_URL = process.env.NEXT_PUBLIC_PRODUCTION_URL
 export const CURRENT_SITE_URL = process.env.NEXT_PUBLIC_CURRENT_SITE_URL
+export const APK_APP_URL = process.env.NEXT_PUBLIC_APK_APP_URL
