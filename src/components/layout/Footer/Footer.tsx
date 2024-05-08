@@ -78,13 +78,13 @@ export const Footer: React.FC = () => {
               </div>
               <div className={styles.contactsRow}>
                 <a
-                  href='tel:89995200003'
+                  href='tel:89067070706'
                   className={classNames(
                     styles.contactsText,
                     styles.contactsLink
                   )}
                 >
-                  8 (999) 520 00-03
+                  8 (906) 707 07-06
                 </a>
                 <a
                   href='mailto:info@horsesmart.ru'
