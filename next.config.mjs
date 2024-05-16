@@ -8,6 +8,13 @@ const nextConfig = {
         hostname: '*'
       }
     ]
+  },
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  ) => {
+    config.externals.push({ canvas: 'commonjs canvas' })
+    return config
   }
 }
 
