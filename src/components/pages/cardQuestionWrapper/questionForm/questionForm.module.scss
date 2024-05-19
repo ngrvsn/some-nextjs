@@ -1,0 +1,105 @@
+.main {
+  max-width: 100%;
+  max-height: 411px;
+  background-color: var(--block-bg-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+
+  padding: 30px;
+  gap: 19px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.28px;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 350px;
+
+  @media screen and (max-width: 1220px) {
+    max-width: 315px;
+  }
+
+  @media screen and (max-width: 960px) {
+    max-width: 660px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 428px) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+.input {
+  max-width: 316px;
+  padding: 10px 19px 10px 19px;
+  gap: 16px;
+  border-radius: 10px;
+  border: 1px solid #e4e4e4;
+  @media screen and (max-width: 960px) {
+    max-width: 1000px;
+  }
+}
+
+.input::placeholder,
+.descriptionProblem::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  display: flex;
+  color: #acacac;
+}
+
+.descriptionProblem {
+  max-width: 316px;
+  height: 85px;
+  padding: 8px 17px 7px 13px;
+  gap: 2px;
+  border-radius: 9px;
+  border: 1px;
+  border: 1px solid #e4e4e4;
+  @media screen and (max-width: 960px) {
+    max-width: 1000px;
+  }
+}
+
+.button {
+  height: 48px;
+  max-width: 316px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--main-color-hover);
+  }
+
+  @media screen and (max-width: 960px) {
+    max-width: 1000px;
+    display: flex;
+  }
+}
+
+.buttonText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+}
