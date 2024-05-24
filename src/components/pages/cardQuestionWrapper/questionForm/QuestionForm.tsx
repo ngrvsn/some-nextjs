@@ -9,24 +9,22 @@ export const QuestionForm: React.FC = () => {
       <form className={styles.inputs}>
         <input
           className={styles.input}
-          name={'email'}
+          name={'Form text'}
           type={'text'}
           placeholder='Как вас зовут?'
-          data-testid='login'
+          
         />
         <input
           className={styles.input}
-          name={'password'}
+          name={'Form text'}
           type={'text'}
           placeholder='Ваш E-mail'
-          data-testid='password'
         />
         <input
           className={styles.descriptionProblem}
-          name={'password'}
+          name={'Form text'}
           type={'text'}
           placeholder='Опишите вашу проблему'
-          data-testid='password'
         />
         <button className={styles.button}>
           <span className={styles.buttonText}>Отправить</span>

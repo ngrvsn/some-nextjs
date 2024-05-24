@@ -17,7 +17,7 @@ export const CompanyCard: React.FC = () => {
         <div className={styles.imageWrapper}>
           <Image
             src={CompanyCardImage}
-            alt=''
+            alt='Картинка карточки компании'
             className={styles.CompanyCardImage}
           />
         </div>
