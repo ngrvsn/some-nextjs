@@ -5,7 +5,8 @@ import telegramIcon from '@/assets/icons/telegram.svg'
 import {
   CURRENT_SITE_URL,
   PRIVACY_POLICY_LINK,
-  SUPPORT_LINK
+  SUPPORT_LINK,
+  USER_AGREEMENT_LINK
 } from '@/shared/constants/urls'
 import CompanyCardImage from '@/assets/images/company-card.png'
 import styles from './CompanyCard.module.scss'
@@ -102,7 +103,7 @@ export const CompanyCard: React.FC = () => {
                 </div>
                 <div className={styles.infoLinksWrapper}>
                   <a
-                    href={PRIVACY_POLICY_LINK}
+                    href={USER_AGREEMENT_LINK}
                     target='_blank'
                     className={styles.privacyPolicyLink}
                   >

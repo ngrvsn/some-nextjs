@@ -1,5 +1,5 @@
 .main {
-  max-width: 100%;
+  max-width: 376px;
   max-height: 411px;
   background-color: var(--block-bg-color);
   box-shadow: var(--box-shadow);
@@ -10,6 +10,9 @@
 
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 1100px) {
+    max-width: 100%;
+  }
 }
 
 .header {
@@ -18,10 +21,9 @@
   line-height: 23.28px;
   margin: 0 auto;
   text-align: left;
-  max-width: 350px;
 
   @media screen and (max-width: 1220px) {
-    max-width: 315px;
+    width: 100%;
   }
 
   @media screen and (max-width: 960px) {
@@ -43,37 +45,30 @@
   flex-direction: column;
   gap: 19px;
 }
-.input {
-  max-width: 316px;
-  padding: 10px 19px 10px 19px;
-  gap: 16px;
-  border-radius: 10px;
+.input,
+.descriptionProblem {
+  width: 100%;
+  padding: 8px 17px 7px 13px;
+  border-radius: 9px;
   border: 1px solid #e4e4e4;
-  @media screen and (max-width: 960px) {
-    max-width: 1000px;
-  }
-}
-
-.input::placeholder,
-.descriptionProblem::placeholder {
+  font-family: Montserrat;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
-  display: flex;
-  color: #acacac;
-}
 
-.descriptionProblem {
-  max-width: 316px;
-  height: 85px;
-  padding: 8px 17px 7px 13px;
-  border-radius: 9px;
-  border: 1px;
-  border: 1px solid #e4e4e4;
   @media screen and (max-width: 960px) {
     max-width: 100%;
   }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.descriptionProblem {
+  height: 85px;
+  resize: none;
 }
 
 .button {
@@ -90,6 +85,10 @@
     background-color: var(--main-color-hover);
   }
 
+  &:disabled {
+    opacity: 0.5;
+  }
+
   @media screen and (max-width: 960px) {
     max-width: 100%;
     display: flex;
@@ -103,7 +102,7 @@
   display: flex;
 }
 
-.descriptionProblem::placeholder {
-  position: absolute;
-  top: 13px;
+.messageRequest {
+  font-size: 12px;
+  margin: auto;
 }
