@@ -1,25 +1,29 @@
 .main {
-    display: flex;
-    padding: 30px 54px;
-    align-items: flex-start;
-    gap: 47px;
-    margin-bottom: 10px;
-    align-self: stretch;
-    border-radius: 15px;
-    background-color: var(--block-bg-color);
-    box-shadow: var(--box-shadow);
-  
-    @media screen and (max-width: 1600px) {
-        gap: 27px;
-        padding: 20px 30px;
-    }
+  display: flex;
+  padding: 30px 54px;
+  align-items: flex-start;
+  gap: 47px;
+  margin-bottom: 10px;
+  align-self: stretch;
+  border-radius: 15px;
+  background-color: var(--block-bg-color);
+  box-shadow: var(--box-shadow);
 
-    @media screen and (max-width: 1240px) {
-        padding: 15px;
-    }
-
-    @media screen and (max-width: 1240px) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: 1600px) {
+    gap: 27px;
+    padding: 20px 30px;
   }
-  
+
+  @media screen and (max-width: 1240px) {
+    padding: 15px;
+  }
+
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
+  }
+}
+
+.breadcrumbs {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
