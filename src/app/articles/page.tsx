@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Articles() {
   return (
     <main>
-      <ArticleWrapper />
+      <ArticleWrapper articleSlug={''} articleTitle={''} />
     </main>
   )
 }
