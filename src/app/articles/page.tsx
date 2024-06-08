@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ArticleWrapper } from '@/components/pages/article/Article'
+import { ArticleWrapper } from '@/components/pages/article/ArticleWrapper'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {

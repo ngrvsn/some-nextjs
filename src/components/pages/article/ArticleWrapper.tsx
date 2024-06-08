@@ -3,7 +3,7 @@ import { getArticlePath } from '@/shared/routing/getArticlePath'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs/Breadcrumbs'
 import { Article } from './clickedArticle/ClickedArticle'
 import { ArticleList } from './articleList/ArticleList'
-import styles from './Article.module.scss'
+import styles from './ArticleWrapper.module.scss'
 
 interface IArticleWrapperProps {
   articleSlug: string
